@@ -14,16 +14,24 @@ export class TrabajadoresComponent implements OnInit {
   ];
   agregarTrabajador = false;
 
-  newTrabajadorNombre = "";
-  newTrabajadorEdad = "";  
+  newTrabajadorNombre: string;
+  newTrabajadorEdad: number;
+  trabajador: Trabajador;
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
   onAgregarTrabajador(){
     this.agregarTrabajador = true;
+  }
+
+  onSubmit(form){
+    this.trabajadores.push(new Trabajador(this.newTrabajadorNombre, this.newTrabajadorEdad));
+    form.reset();
+    this.agregarTrabajador = false;
   }
 
 

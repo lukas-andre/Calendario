@@ -1,3 +1,25 @@
-<p>
-  calendario works!
-</p>
+<!-- CON TABLAS  -->
+<div class="row">
+  <div class="col-xs-12">
+    <div class="row anho">
+      <h1>{{anhoActual}}</h1>
+    </div>
+    <div class="row mes">
+      {{mesActualVerbose}}
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th *ngFor="let dia of dias">{{dia}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cantidadbloques of bloques">
+          <td *ngFor="let dias of dias "> <app-bloques></app-bloques> </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
