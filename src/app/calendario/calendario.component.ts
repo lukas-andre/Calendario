@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Meses } from '../modelos/meses.model';
 
 @Component({
@@ -36,6 +36,8 @@ export class CalendarioComponent implements OnInit {
   mesActual: any = new Date().getMonth();
   mesActualVerbose: any ;
 
+  @Output() dataCelda = new EventEmitter<{rango_hora : string, data : string}>();
+
   constructor() {
     this.setMesActualVerbose();
   }
@@ -52,4 +54,14 @@ export class CalendarioComponent implements OnInit {
       return this.rango_bloque.pop();
     }
   }
+
+  sendRangoAndDataToBloques(rango_hora: string, data: string){
+    this.dataCelda.emit({
+      rango_hora: rango_hora,
+      data: data
+    })
+    console.log(rango_hora);
+    console.log(data);
+  }
+
 }

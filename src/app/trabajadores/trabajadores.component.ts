@@ -25,7 +25,7 @@ export class TrabajadoresComponent implements OnInit {
   }
 
   onAgregarTrabajador(){
-    this.agregarTrabajador = true;
+    this.agregarTrabajador = !this.agregarTrabajador;
   }
 
   onSubmit(form){

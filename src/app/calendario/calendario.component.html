@@ -15,12 +15,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let rango of rango_bloque;">
-          <td *ngFor="let dias of head; index as i">
-            <div *ngIf=" i == 0">
-              <h5>{{ rango }}</h5>
-            </div>
-             <app-bloques *ngIf=" i != 0" ></app-bloques>
+        <tr *ngFor="let rango_hora of rango_bloque;">
+          <td *ngFor="let data of head; index as i" (click)="sendRangoAndDataToBloques(rango_hora, data)" >
+             <app-bloques> {{rango_hora}} {{data}} </app-bloques>
           </td>
         </tr>
 
