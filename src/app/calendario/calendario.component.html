@@ -18,6 +18,8 @@
         <tr *ngFor="let rango_hora of rango_bloque;">
           <td *ngFor="let data of head; index as i" (click)="sendRangoAndDataToBloques(rango_hora, data)" >
              <app-bloques> {{rango_hora}} {{data}} </app-bloques>
+             <!-- AHORA HAY QUE METER LOS HEADS Y RANGO BLOQUES EN COMPONENTE <app-bloques> BLOQUES
+                  YA QUE IGUAL SON LOS BLOQUES DE LA TABLA. LA IDEA ES QUE BLOQUES EMITAN AL CALENDARIO O EXISTA CONEXION ENTRE AMBOS  -->
           </td>
         </tr>
 
