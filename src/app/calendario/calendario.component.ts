@@ -8,10 +8,23 @@ import { Meses } from '../modelos/meses.model';
 })
 export class CalendarioComponent implements OnInit {
 
-  dias: string[] = [
-    'Lunes', 'Martes', 'Miercoles',
-    'Jueves', 'Viernes', 'Sabado'
+  head: string[] = [
+    'Bloque','Lunes', 'Martes', 'Miercoles',
+    'Jueves', 'Viernes'
   ];
+
+  rango_bloque : string[] = [
+    '09:00-10:00',
+    '10:00-11:00',
+    '11:00-12:00',
+    '13:00-14:00',
+    '14:00-15:00',
+    '15:00-16:00',
+    '16:00-17:00',
+    '17:00-18:00',
+    '18:00-19:00',
+  ]
+
   dd: number;
   meses: Meses = new Meses();
   aaaa: number;
@@ -22,7 +35,6 @@ export class CalendarioComponent implements OnInit {
   anhoActual: number = new Date().getFullYear();
   mesActual: any = new Date().getMonth();
   mesActualVerbose: any ;
-  bloques = [1,2,3,4,5,6,7]
 
   constructor() {
     this.setMesActualVerbose();
@@ -35,6 +47,9 @@ export class CalendarioComponent implements OnInit {
     this.mesActualVerbose = this.meses.getNombresArray()[this.mesActual];
   }
 
-
-
+  getBloque(){
+    if(this.rango_bloque){
+      return this.rango_bloque.pop();
+    }
+  }
 }

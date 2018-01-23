@@ -10,13 +10,13 @@ export class BloquesComponent implements OnInit {
   estadoBloque = true;
   @Input() cantidadBloques = 7;
   rango_bloque : string[] = [
-    '09:00-10:00',
-    '10:00-11:00',
-    '11:00-12:00',
-    '13:00-14:00',
-    '15:00-16:00',
-    '17:00-18:00',
     '18:00-19:00',
+    '17:00-18:00',
+    '15:00-16:00',
+    '13:00-14:00',
+    '11:00-12:00',
+    '10:00-11:00',
+    '09:00-10:00',
   ]
   rowBloques: string[];
 
@@ -36,5 +36,13 @@ export class BloquesComponent implements OnInit {
   //     }
   //   }
   // }
+
+  getBloque(){
+    if (this.rango_bloque){
+      console.log(this.rango_bloque.pop())
+      // return this.rango_bloque.pop();
+
+    }
+  }
 
 }

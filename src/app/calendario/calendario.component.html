@@ -11,12 +11,17 @@
     <table class="table">
       <thead>
         <tr>
-          <th *ngFor="let dia of dias">{{dia}}</th>
+          <th *ngFor="let celda of head">{{celda}}</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let cantidadbloques of bloques">
-          <td *ngFor="let dias of dias "> <app-bloques></app-bloques> </td>
+        <tr *ngFor="let rango of rango_bloque;">
+          <td *ngFor="let dias of head; index as i">
+            <div *ngIf=" i == 0">
+              <h5>{{ rango }}</h5>
+            </div>
+             <app-bloques *ngIf=" i != 0" ></app-bloques>
+          </td>
         </tr>
 
       </tbody>
