@@ -1,6 +1,7 @@
 export class Horario {
-  public dias: string;
-  public semanas: string;
-  public meses: string;
-  public años: string;
+  public año: string;
+  public mes: string;
+  public dia: string;
+  public hora: string;
+  public estado: string;
 }

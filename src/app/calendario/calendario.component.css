@@ -1,22 +1,3 @@
-li {
-  list-style: none;
-}
-
-table {
-  text-align: center;
-  border: 1px solid black;
-}
-
-th {
-  text-align: center;
-  border: 1px solid black;
-
-}
-
-/*.col-xs-12{
-  text-align: center;
-}*/
-
 .anho {
   text-align: center;
   color: grey;
