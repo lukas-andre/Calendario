@@ -26,5 +26,17 @@
 
       </tbody>
     </table>
+
+    <div class="row">
+    <app-bloques
+      (fechaClickeada)="recibirFecha($event)"
+      [anho]="anhoActual"
+      [mes]="mesActual"
+      [mesVerbose]="mesActualVerbose"
+    ></app-bloques>
+    </div>
+  </div>
+  <div class="col-xs-2">
+    <h1>Fecha: {{fechaString}}</h1>
   </div>
 </div>
