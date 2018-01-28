@@ -1,0 +1,52 @@
+<div class="container">
+<h1>Trabajadores</h1>
+  <div id="accordion">
+    <div class="card" *ngFor="let trabajador of trabajadores">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            {{trabajador.name}}
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" >
+        <div class="card-body">
+          <ul>
+            <li>
+              {{trabajador.name}}
+            </li>
+            <li>
+              {{trabajador}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 10px">
+    <div class="col-xs-12">
+      <button
+        type="submit"
+        name="button"
+        class="btn btn-success boton-agrega"
+        (click)="onAgregarTrabajador()"
+      >Agregar Trabajador</button>
+      <form #addTrabajador="ngForm" *ngIf="agregarTrabajador">
+        <div class="list-group-item" *ngIf="agregarTrabajador">
+          <input type="text" name="nombre" class="input-name"
+          placeholder="nombre" [(ngModel)]="newTrabajadorNombre" required>
+          <input type="number" name="edad" class="input-edad"
+          placeholder="edad" [(ngModel)]="newTrabajadorEdad" required>
+          <input
+            type="submit"
+            value="Agregar"
+            class="btn btn-primary"
+            [disabled]="addTrabajador.form.valid"
+          />
+          {{newTrabajadorNombre}} {{newTrabajadorEdad}}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

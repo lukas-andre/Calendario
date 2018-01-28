@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="header">Horario</th>
+      <th class="header" *ngFor="let celda of dias">{{celda}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rango_hora of rango_bloque; index as j">
+      <td class="rangos">{{j+1}}° Bloque <br> <i>[ {{rango_hora}} ]</i> </td>
+      <td
+        *ngFor="let bloque of bloques; index as i" 
+        (click)="onClickDataCell(rango_hora, j+1, bloque)"
+        class="bloque" >
+        {{ bloque.nombre_dia }} {{ bloque.num_dia }}
+      </td>
+    </tr>
+  </tbody>
+</table>

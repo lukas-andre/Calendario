@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-8">
+    <div class="row anho">
+      <h1>{{year}}</h1>
+      <!-- <h1>{{dinamic_head}}</h1> -->
+    </div>
+    <!-- <div class="row mes">
+      {{current_dia}} {{current_dd}} de {{month}}
+      {{month}}
+    </div> -->
+    <div class="row mes">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary" (click)="changeSemana(change='before')">Semana Anterior</button>
+        <button type="button" class="btn btn-primary" disabled> {{num_day}} de {{month}}</button>
+        <button type="button" class="btn btn-primary" (click)="changeSemana(change='next')">Semana Siguiente</button>
+      </div>
+    </div>
+    <app-bloques
+      (changeSemana)="recibirChangeSemana($event)"
+      (fechaClickeada)="recibirFecha($event)"
+      [dinamic_date]="dinamic_date"
+      [view]="view"
+      [settings]="settings"
+      [semana]="semana"
+    ></app-bloques>
+  </div>
+  <div class="col-4">
+    <h4>Fecha:</h4>
+    <div *ngIf="fechaSeleccionada" >
+      <p> rango: {{ fechaSeleccionada.rango_bloque  }}</p>
+      <p> bloqe: {{ fechaSeleccionada.bloque }}</p>
+      <p> data: {{ fechaSeleccionada.nombre_dia }}</p>
+      <p> dia: {{ fechaSeleccionada.num_dia }}</p>
+      <p> mes: {{ fechaSeleccionada.mes }}</p>
+      <p> mes Verbose: {{ months[fechaSeleccionada.mes] }}</p>
+      <p> año: {{ fechaSeleccionada.anho }}</p>
+    </div>
+  </div>
+</div>
